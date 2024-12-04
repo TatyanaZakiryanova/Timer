@@ -8,6 +8,18 @@ const theme = createTheme({
   typography: {
     fontFamily: '"Poppins", "Arial", sans-serif',
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        html: {
+          height: '100%',
+        },
+        body: {
+          height: '100%',
+        },
+      },
+    },
+  },
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);

@@ -6,7 +6,7 @@ const App = () => {
     <Typography variant="h4" component="h1" gutterBottom>
       <Box
         sx={{
-          minHeight: '100vh',
+          height: '100vh',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
