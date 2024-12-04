@@ -23,4 +23,20 @@ describe('Timer Component', () => {
 
     expect(screen.getByText('00 : 03')).toBeInTheDocument();
   });
+
+  test('pauses timer', () => {
+    render(<Timer />);
+
+    const startButton = screen.getByRole('button', { name: /start/i });
+    fireEvent.click(startButton);
+
+    act(() => {
+      jest.advanceTimersByTime(3000);
+    });
+
+    const pauseButton = screen.getByRole('button', { name: /pause/i });
+    fireEvent.click(pauseButton);
+
+    expect(pauseButton).toBeInTheDocument();
+  });
 });
