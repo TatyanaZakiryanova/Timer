@@ -38,10 +38,13 @@ const Timer = () => {
     setIsRunning(false);
   };
 
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+
   return (
     <div>
-      <Typography component="p" sx={{ fontSize: '25px', color: '#525252' }} gutterBottom>
-        {seconds}
+      <Typography component="p" sx={{ fontSize: '25px', color: '#404040' }} gutterBottom>
+        {String(minutes).padStart(2, '0')}:{String(remainingSeconds).padStart(2, '0')}
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'space-around', mt: 2 }}>
         <Button
