@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/Timer/static/js/main.3291b35b.js",
+    "static/js/453.67bc05c0.chunk.js": "/Timer/static/js/453.67bc05c0.chunk.js",
+    "index.html": "/Timer/index.html",
+    "main.3291b35b.js.map": "/Timer/static/js/main.3291b35b.js.map",
+    "453.67bc05c0.chunk.js.map": "/Timer/static/js/453.67bc05c0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.3291b35b.js"
+  ]
+}
