@@ -40,7 +40,7 @@ const Timer = () => {
 
   return (
     <div>
-      <Typography variant="h5" component="p" gutterBottom>
+      <Typography component="p" sx={{ fontSize: '25px' }} gutterBottom>
         {seconds}
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'space-around', mt: 2 }}>
@@ -51,7 +51,12 @@ const Timer = () => {
         >
           {isRunning ? 'Pause' : 'Start'}
         </Button>
-        <Button variant="contained" color="error" onClick={resetTimer}>
+        <Button
+          variant="contained"
+          color={isRunning ? 'error' : 'primary'}
+          onClick={resetTimer}
+          disabled={!isRunning}
+        >
           Reset
         </Button>
       </Box>
