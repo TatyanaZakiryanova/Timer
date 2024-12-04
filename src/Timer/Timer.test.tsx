@@ -39,4 +39,20 @@ describe('Timer Component', () => {
 
     expect(pauseButton).toBeInTheDocument();
   });
+
+  test('resets timer', () => {
+    render(<Timer />);
+
+    const startButton = screen.getByRole('button', { name: /start/i });
+    fireEvent.click(startButton);
+
+    act(() => {
+      jest.advanceTimersByTime(5000);
+    });
+
+    const resetButton = screen.getByRole('button', { name: /reset/i });
+    fireEvent.click(resetButton);
+
+    expect(screen.getByText('00 : 00')).toBeInTheDocument();
+  });
 });
