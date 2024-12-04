@@ -1,11 +1,26 @@
-import { fireEvent, render, screen } from '@testing-library/react';
 import Timer from './Timer';
+import { render, screen, fireEvent, act } from '@testing-library/react';
+
+jest.useFakeTimers();
 
 describe('Timer Component', () => {
-  test('renders the initial state correctly', () => {
+  test('renders Timer component', () => {
     render(<Timer />);
-    expect(screen.getByText('0')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /start/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /reset/i })).toBeDisabled();
+    expect(screen.getByText('00 : 00')).toBeInTheDocument();
+  });
+
+  test('starts timer and updates seconds', () => {
+    render(<Timer />);
+
+    const startButton = screen.getByRole('button', { name: /start/i });
+    fireEvent.click(startButton);
+
+    expect(screen.getByRole('button', { name: /pause/i })).toBeInTheDocument();
+
+    act(() => {
+      jest.advanceTimersByTime(3000);
+    });
+
+    expect(screen.getByText('00 : 03')).toBeInTheDocument();
   });
 });
