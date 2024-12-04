@@ -1,3 +1,4 @@
+import { Box, Button, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 const Timer = () => {
@@ -39,9 +40,21 @@ const Timer = () => {
 
   return (
     <div>
-      <div>{seconds}</div>
-      <button onClick={toggleTimer}>{isRunning ? 'Pause' : 'Start'}</button>
-      <button onClick={resetTimer}>Reset</button>
+      <Typography variant="h5" component="p" gutterBottom>
+        {seconds}
+      </Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'space-around', mt: 2 }}>
+        <Button
+          variant={isRunning ? 'outlined' : 'contained'}
+          color="primary"
+          onClick={toggleTimer}
+        >
+          {isRunning ? 'Pause' : 'Start'}
+        </Button>
+        <Button variant="contained" color="error" onClick={resetTimer}>
+          Reset
+        </Button>
+      </Box>
     </div>
   );
 };
