@@ -28,10 +28,20 @@ const Timer = () => {
     setIsRunning(!isRunning);
   };
 
+  const resetTimer = () => {
+    if (intervalId) {
+      clearInterval(intervalId);
+      setIntervalId(null);
+    }
+    setSeconds(0);
+    setIsRunning(false);
+  };
+
   return (
     <div>
       <div>{seconds}</div>
       <button onClick={toggleTimer}>{isRunning ? 'Pause' : 'Start'}</button>
+      <button onClick={resetTimer}>Reset</button>
     </div>
   );
 };
