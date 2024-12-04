@@ -40,7 +40,7 @@ const Timer = () => {
 
   return (
     <div>
-      <Typography component="p" sx={{ fontSize: '25px' }} gutterBottom>
+      <Typography component="p" sx={{ fontSize: '25px', color: '#525252' }} gutterBottom>
         {seconds}
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'space-around', mt: 2 }}>

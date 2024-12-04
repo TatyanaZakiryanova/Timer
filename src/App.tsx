@@ -1,4 +1,4 @@
-import Timer from './Timer';
+import Timer from './Timer/Timer';
 import { Box, Card, CardContent, Typography } from '@mui/material';
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: '#f0f0f0',
+          background: 'linear-gradient(to bottom, #62b3f5, #e3f2fd)',
         }}
       >
         <Card
