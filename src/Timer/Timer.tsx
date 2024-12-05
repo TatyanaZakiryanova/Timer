@@ -43,7 +43,7 @@ const Timer = () => {
 
   return (
     <div>
-      <Typography component="p" sx={{ fontSize: '22px', color: '#404040' }} gutterBottom>
+      <Typography component="h2" sx={{ fontSize: '22px', color: '#404040' }} gutterBottom>
         {`${String(minutes).padStart(2, '0')} : ${String(remainingSeconds).padStart(2, '0')}`}
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'space-around', mt: 2 }}>
