@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/Timer/static/js/main.ce5ff208.js",
+    "main.js": "/Timer/static/js/main.dc286ba6.js",
     "static/js/453.67bc05c0.chunk.js": "/Timer/static/js/453.67bc05c0.chunk.js",
     "index.html": "/Timer/index.html",
-    "main.ce5ff208.js.map": "/Timer/static/js/main.ce5ff208.js.map",
+    "main.dc286ba6.js.map": "/Timer/static/js/main.dc286ba6.js.map",
     "453.67bc05c0.chunk.js.map": "/Timer/static/js/453.67bc05c0.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.ce5ff208.js"
+    "static/js/main.dc286ba6.js"
   ]
 }
