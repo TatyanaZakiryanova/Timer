@@ -2,7 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 const Timer = () => {
-  const [seconds, setSeconds] = useState<number>(0);
+  const [milliseconds, setMilliseconds] = useState<number>(0);
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
@@ -22,8 +22,8 @@ const Timer = () => {
       }
     } else {
       const id = setInterval(() => {
-        setSeconds((prev) => prev + 1);
-      }, 1000);
+        setMilliseconds((prev) => prev + 10);
+      }, 10);
       setIntervalId(id);
     }
     setIsRunning(!isRunning);
@@ -34,19 +34,31 @@ const Timer = () => {
       clearInterval(intervalId);
       setIntervalId(null);
     }
-    setSeconds(0);
+    setMilliseconds(0);
     setIsRunning(false);
   };
 
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = seconds % 60;
+  const totalSeconds = Math.floor(milliseconds / 1000);
+  const remainingMilliseconds = milliseconds % 1000;
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
 
   return (
     <div>
-      <Typography component="h2" sx={{ fontSize: '22px', color: '#404040' }} gutterBottom>
-        {`${String(minutes).padStart(2, '0')} : ${String(remainingSeconds).padStart(2, '0')}`}
+      <Typography
+        component="h2"
+        sx={{
+          fontSize: '26px',
+          fontWeight: 'bold',
+          color: '#469ce3',
+        }}
+        gutterBottom
+      >
+        {`${String(minutes).padStart(2, '0')} : ${String(seconds).padStart(2, '0')} : ${String(
+          Math.floor(remainingMilliseconds / 10),
+        ).padStart(2, '0')}`}
       </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'space-around', mt: 2 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-around', mt: 3 }}>
         <Button
           variant={isRunning ? 'outlined' : 'contained'}
           color="primary"

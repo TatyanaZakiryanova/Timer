@@ -6,7 +6,7 @@ import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 
 const theme = createTheme({
   typography: {
-    fontFamily: '"Poppins", "Arial", sans-serif',
+    fontFamily: '"monospace", "Arial", sans-serif',
   },
   components: {
     MuiCssBaseline: {

@@ -6,7 +6,7 @@ jest.useFakeTimers();
 describe('Timer Component', () => {
   test('renders Timer component', () => {
     render(<Timer />);
-    expect(screen.getByText('00 : 00')).toBeInTheDocument();
+    expect(screen.getByText('00 : 00 : 00')).toBeInTheDocument();
   });
 
   test('starts timer and updates seconds', () => {
@@ -21,7 +21,7 @@ describe('Timer Component', () => {
       jest.advanceTimersByTime(3000);
     });
 
-    expect(screen.getByText('00 : 03')).toBeInTheDocument();
+    expect(screen.getByText('00 : 03 : 00')).toBeInTheDocument();
   });
 
   test('pauses timer', () => {
@@ -53,6 +53,6 @@ describe('Timer Component', () => {
     const resetButton = screen.getByRole('button', { name: /reset/i });
     fireEvent.click(resetButton);
 
-    expect(screen.getByText('00 : 00')).toBeInTheDocument();
+    expect(screen.getByText('00 : 00 : 00')).toBeInTheDocument();
   });
 });

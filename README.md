@@ -1,12 +1,12 @@
 # Timer
 
-Таймер с отсчётом минут и секунд.
+Таймер.
 
 ## Deployment & Live Demo
 
 [Deploy](https://tatyanazakiryanova.github.io/Timer/)
 
-<img src="./public/timerPreview.png" alt="preview" />
+<img src="./public/preview.png" alt="preview" />
 
 ## Technologies Used
 

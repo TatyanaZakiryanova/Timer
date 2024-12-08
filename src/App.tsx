@@ -1,4 +1,4 @@
-import Timer from './Timer/Timer';
+import Timer from './components/Timer/Timer';
 import { Box, Card, CardContent, Typography } from '@mui/material';
 
 const App = () => {
